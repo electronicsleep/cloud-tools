@@ -1,7 +1,7 @@
 build:
 	cd src; go build -o ct *.go
 
-help:
+dev:
 	cd src; go build -o ct *.go; ./ct --help
 
 clean:
