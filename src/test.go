@@ -11,7 +11,7 @@ var testCmd = &cobra.Command{
 	Short: "test short command",
 	Long:  "testing long command",
 	Run: func(cmd *cobra.Command, args []string) {
-		run_test(args)
+		test(args)
 	},
 }
 
