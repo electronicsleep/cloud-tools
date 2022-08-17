@@ -27,7 +27,7 @@ func Execute() {
 }
 
 func init() {
-	RootCmd.PersistentFlags().StringVar(&rootOpts.env, "env", "qa", "deploy env")
+	RootCmd.PersistentFlags().StringVar(&rootOpts.env, "env", "qa", "env")
 	RootCmd.PersistentFlags().StringVar(&rootOpts.region, "region", "us-west-1", "region")
 
 	flag.CommandLine = flag.NewFlagSet(os.Args[0], flag.ExitOnError)

@@ -23,7 +23,7 @@ func init() {
 func checkSites(args []string) {
 	urls := return_url()
 	fmt.Println("urls:", urls)
-	fmt.Println("check_sites", args)
+	fmt.Println("check-sites:", args)
 
 	errorNum := 0
 	for i, v := range urls {
