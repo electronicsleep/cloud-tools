@@ -35,7 +35,7 @@ func checkSites(args []string) {
 		res, err := http.Get(requestURL)
 		if err != nil {
 			fmt.Printf("error making http request: %s\n", err)
-			postSlack("error with site" + v)
+			// postSlack("error with site" + v)
 			errorNum += 1
 			continue
 		}
