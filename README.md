@@ -3,7 +3,8 @@
 Infra and DevOps tools in golang!
 
 ```
-make dev
+make
+./bin/ct -h
 ```
 
 https://github.com/spf13/cobra

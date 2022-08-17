@@ -1,8 +1,8 @@
 build:
-	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin;
+	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin
 
 dev:
-	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin; cd ..; ct ./bin/; ./bin/ct --help
+	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin; ./bin/ct --help
 
 clean:
 	rm src/ct; rm bin/ct
