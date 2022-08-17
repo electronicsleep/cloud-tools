@@ -2,7 +2,7 @@ build:
 	cd src; go build -o ct *.go
 
 dev:
-	cd src; go build -o ct *.go; ./ct --help
+	cd src; go build -o ct *.go; cp ct ../
 
 clean:
 	cd src; rm ct

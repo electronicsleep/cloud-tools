@@ -8,7 +8,7 @@ import (
 )
 
 var checkSitesCmd = &cobra.Command{
-	Use:   "check_sites",
+	Use:   "check-sites",
 	Short: "check sites short",
 	Long:  "check sites from inventory",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -34,11 +34,11 @@ func checkSites(args []string) {
 		res, err := http.Get(requestURL)
 		if err != nil {
 			fmt.Printf("error making http request: %s\n", err)
+			postSlack("error with site" + v)
 			errorNum += 1
 			continue
 		}
 
-		fmt.Printf("client: got response!\n")
 		fmt.Printf("client: status code: %d\n", res.StatusCode)
 	}
 	fmt.Println("errorNum:", errorNum)

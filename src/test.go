@@ -11,6 +11,9 @@ var testCmd = &cobra.Command{
 	Short: "test short command",
 	Long:  "testing long command",
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("args:", args)
+		fmt.Println("env:", rootOpts.env)
+		fmt.Println("region:", rootOpts.region)
 		test(args)
 	},
 }

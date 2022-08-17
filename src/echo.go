@@ -11,6 +11,9 @@ var echoCmd = &cobra.Command{
 	Short: "echo short cmd",
 	Long:  "echo long cmd",
 	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("args:", args)
+		fmt.Println("env:", rootOpts.env)
+		fmt.Println("region:", rootOpts.region)
 		echo(args)
 	},
 }
