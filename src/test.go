@@ -8,7 +8,7 @@ import (
 
 var testCmd = &cobra.Command{
 	Use:   "test",
-	Short: "test short command",
+	Short: "test command",
 	Long:  "testing long command",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("args:", args)

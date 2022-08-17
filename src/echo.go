@@ -8,8 +8,8 @@ import (
 
 var echoCmd = &cobra.Command{
 	Use:   "echo",
-	Short: "echo short cmd",
-	Long:  "echo long cmd",
+	Short: "echo command",
+	Long:  "echo long command",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("args:", args)
 		fmt.Println("env:", rootOpts.env)
