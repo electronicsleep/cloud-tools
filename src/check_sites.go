@@ -8,9 +8,10 @@ import (
 )
 
 var checkSitesCmd = &cobra.Command{
-	Use:   "check-sites",
-	Short: "check sites short",
-	Long:  "check sites from inventory",
+	Use:     "cs",
+	Aliases: []string{"check", "check-sites"},
+	Short:   "check-sites",
+	Long:    "check sites from inventory",
 	Run: func(cmd *cobra.Command, args []string) {
 		checkSites(args)
 	},

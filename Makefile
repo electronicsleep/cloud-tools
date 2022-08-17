@@ -1,11 +1,11 @@
 build:
-	cd src; go build -o ct *.go
+	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin;
 
 dev:
-	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin/
+	mkdir -p bin; cd src; go build -o ct *.go; cp ct ../bin; cd ..; ct ./bin/; ./bin/ct --help
 
 clean:
-	cd src; rm ct
+	rm src/ct; rm bin/ct
 
 install:
 	cd src; go build -o ct *.go
