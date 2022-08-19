@@ -11,9 +11,11 @@ var checkSitesCmd = &cobra.Command{
 	Use:     "cs",
 	Aliases: []string{"check", "check-sites"},
 	Short:   "check-sites",
-	Long:    "check sites from inventory",
+	Long:    `check sites from inventory`,
 	Run: func(cmd *cobra.Command, args []string) {
-		checkSites(args)
+		fmt.Println("args:", args)
+		fmt.Println("verbose:", rootOpts.verbose)
+		checkSites(args, rootOpts.verbose)
 	},
 }
 
@@ -21,10 +23,13 @@ func init() {
 	RootCmd.AddCommand(checkSitesCmd)
 }
 
-func checkSites(args []string) {
+func checkSites(args []string, verbose bool) {
 	urls := return_url()
-	fmt.Println("urls:", urls)
-	fmt.Println("check-sites:", args)
+	if verbose == true {
+		fmt.Println("verbose on")
+		fmt.Println("urls:", urls)
+		fmt.Println("check-sites:", args)
+	}
 
 	errorNum := 0
 	for i, v := range urls {

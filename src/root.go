@@ -8,8 +8,9 @@ import (
 )
 
 type rootOptions struct {
-	env    string
-	region string
+	env     string
+	region  string
+	verbose bool
 }
 
 var rootOpts = &rootOptions{}
@@ -29,6 +30,7 @@ func Execute() {
 func init() {
 	RootCmd.PersistentFlags().StringVar(&rootOpts.env, "env", "qa", "env")
 	RootCmd.PersistentFlags().StringVar(&rootOpts.region, "region", "us-west-1", "region")
+	RootCmd.PersistentFlags().BoolVar(&rootOpts.verbose, "verbose", false, "verbose")
 
 	flag.CommandLine = flag.NewFlagSet(os.Args[0], flag.ExitOnError)
 
