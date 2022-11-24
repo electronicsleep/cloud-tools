@@ -1,7 +1,12 @@
 build:
 	mkdir -p bin; cd src; go build -o ct *.go
-	cp src/ct bin
+	mv src/ct bin
 	./bin/ct --help
+
+test: build
+	./bin/ct test test
+	./bin/ct echo test -r us-east-1 -e dev
+	./bin/ct cs
 
 dev:
 	mkdir -p bin; cd src; go build -o ct *.go
