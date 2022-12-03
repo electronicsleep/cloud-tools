@@ -1,7 +1,6 @@
 build:
-	mkdir -p bin; cd src; go build -o ct *.go
-	mv src/ct bin
-	./bin/ct --help
+	mkdir -p bin; cd src; go fmt .; go build -o ct *.go
+	mv src/ct bin; ./bin/ct --help
 
 test: build
 	./bin/ct test test
