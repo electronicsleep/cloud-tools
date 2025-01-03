@@ -27,7 +27,7 @@ func test(args []string) {
 	fmt.Println("run test", args)
 	var config configStruct
 	config.getConfig()
-	servers := config.Servers
-	fmt.Println("servers", servers)
+	sites := config.Sites
+	fmt.Println("sites:", sites)
 	sendMessage("cloudtools test: ", config)
 }

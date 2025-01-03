@@ -6,7 +6,7 @@ build:
 test: build
 	./bin/ct test test
 	./bin/ct echo test -r us-east-1 -e dev
-	./bin/ct cs
+	./bin/ct sites
 
 race:
 	mkdir -p bin; cd src; go fmt . && go build --race -o ct *.go

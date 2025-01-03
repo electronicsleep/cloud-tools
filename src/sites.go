@@ -8,9 +8,9 @@ import (
 )
 
 var checkSitesCmd = &cobra.Command{
-	Use:     "cs",
-	Aliases: []string{"check", "check-sites"},
-	Short:   "check-sites",
+	Use:     "sites",
+	Aliases: []string{"check", "check sites"},
+	Short:   "check sites",
 	Long:    `check sites from inventory`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("args:", args)
@@ -26,15 +26,15 @@ func init() {
 func checkSites(args []string, verbose bool) {
 	var config configStruct
 	config.getConfig()
-	servers := config.Servers
+	sites := config.Sites
 	if verbose == true {
 		fmt.Println("verbose on")
-		fmt.Println("servers:", servers)
+		fmt.Println("sites:", sites)
 		fmt.Println("check-sites:", args)
 	}
 
 	errorNum := 0
-	for i, s := range servers {
+	for i, s := range sites {
 
 		fmt.Println("i:", i)
 		fmt.Println("server:", s)

@@ -23,7 +23,7 @@ type configStruct struct {
 	SlackURL string   `yaml:"slack_url"`
 	SlackMsg string   `yaml:"slack_msg"`
 	Email    string   `yaml:"email"`
-	Servers  []string `yaml:"servers"`
+	Sites    []string `yaml:"sites"`
 }
 
 // Get config from config.yaml
