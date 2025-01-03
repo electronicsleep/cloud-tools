@@ -1,0 +1,4 @@
+slack_url:
+slack_msg: <@user>
+servers:
+  - https://go.dev

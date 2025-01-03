@@ -24,7 +24,10 @@ func init() {
 }
 
 func test(args []string) {
-	fmt.Println("running test", args)
-	ask_continue()
-	fmt.Println("lets go!")
+	fmt.Println("run test", args)
+	var config configStruct
+	config.getConfig()
+	servers := config.Servers
+	fmt.Println("servers", servers)
+	sendMessage("cloudtools test: ", config)
 }

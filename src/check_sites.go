@@ -24,28 +24,30 @@ func init() {
 }
 
 func checkSites(args []string, verbose bool) {
-	urls := return_url()
+	var config configStruct
+	config.getConfig()
+	servers := config.Servers
 	if verbose == true {
 		fmt.Println("verbose on")
-		fmt.Println("urls:", urls)
+		fmt.Println("servers:", servers)
 		fmt.Println("check-sites:", args)
 	}
 
 	errorNum := 0
-	for i, v := range urls {
+	for i, s := range servers {
 
 		fmt.Println("i:", i)
-		fmt.Println("v:", v)
-		requestURL := fmt.Sprintf("%s", v)
+		fmt.Println("server:", s)
+		requestURL := fmt.Sprintf("%s", s)
 		res, err := http.Get(requestURL)
 		if err != nil {
-			fmt.Printf("error making http request: %s\n", err)
-			// postSlack("error with site" + v)
+			fmt.Printf("ERROR: http request: %s\n", err)
+			sendMessage("error with site: "+s, config)
 			errorNum += 1
 			continue
+		} else {
+			fmt.Printf("client: status code: %d\n", res.StatusCode)
 		}
-
-		fmt.Printf("client: status code: %d\n", res.StatusCode)
 	}
 	fmt.Println("errorNum:", errorNum)
 }
