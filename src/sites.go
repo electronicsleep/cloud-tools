@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var checkSitesCmd = &cobra.Command{
+var SitesCmd = &cobra.Command{
 	Use:     "sites",
 	Aliases: []string{"check", "check sites"},
 	Short:   "check sites",
@@ -15,15 +15,15 @@ var checkSitesCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("args:", args)
 		fmt.Println("verbose:", rootOpts.verbose)
-		checkSites(args, rootOpts.verbose)
+		sites(args, rootOpts.verbose)
 	},
 }
 
 func init() {
-	RootCmd.AddCommand(checkSitesCmd)
+	RootCmd.AddCommand(SitesCmd)
 }
 
-func checkSites(args []string, verbose bool) {
+func sites(args []string, verbose bool) {
 	var config configStruct
 	config.getConfig()
 	sites := config.Sites
