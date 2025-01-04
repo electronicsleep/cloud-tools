@@ -12,3 +12,5 @@ make
 https://github.com/spf13/cobra
 
 https://github.com/aws/aws-sdk-go-v2
+
+https://github.com/kubernetes/client-go
