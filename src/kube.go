@@ -35,6 +35,7 @@ func kube_events(args []string) {
 	client, err := createClient("/Users/chris/.kube/config")
 	if err != nil {
 		fmt.Println("ERROR: kube createClient")
+		return
 	}
 	events, _ := client.CoreV1().Events("default").List(context.TODO(), metav1.ListOptions{FieldSelector: "involvedObject.name=" + args[0], TypeMeta: metav1.TypeMeta{Kind: "Pod"}})
 	for _, item := range events.Items {
