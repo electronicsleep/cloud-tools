@@ -46,10 +46,8 @@ func aws_ec2_list() {
 
 	for _, reservation := range runningInstances.Reservations {
 		for _, instance := range reservation.Instances {
-			if rootOpts.verbose {
-				fmt.Printf("%s", *instance.PublicIpAddress)
-				fmt.Printf(" # %s\n", *instance.InstanceId)
-			}
+			fmt.Printf("%s", *instance.PublicIpAddress)
+			fmt.Printf(" # %s\n", *instance.InstanceId)
 		}
 	}
 }
