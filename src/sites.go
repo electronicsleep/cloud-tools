@@ -34,10 +34,8 @@ func sites(args []string, verbose bool) {
 	}
 
 	errorNum := 0
-	for i, s := range sites {
-
-		fmt.Println("i:", i)
-		fmt.Println("server:", s)
+	for _, s := range sites {
+		fmt.Println("site:", s)
 		requestURL := fmt.Sprintf("%s", s)
 		res, err := http.Get(requestURL)
 		if err != nil {
@@ -46,7 +44,7 @@ func sites(args []string, verbose bool) {
 			errorNum += 1
 			continue
 		} else {
-			fmt.Printf("client: status code: %d\n", res.StatusCode)
+			fmt.Printf("status: %d\n", res.StatusCode)
 		}
 	}
 	fmt.Println("errorNum:", errorNum)

@@ -29,5 +29,5 @@ func test(args []string) {
 	config.getConfig()
 	sites := config.Sites
 	fmt.Println("sites:", sites)
-	sendMessage("cloudtools test: ", config)
+	sendMessage("cloudtools test", config)
 }

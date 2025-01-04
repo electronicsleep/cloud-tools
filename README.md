@@ -1,6 +1,8 @@
 # cloud-tools cli
 
-Infra and DevOps tools in golang!
+Example cli using cobra and cloud api
+
+Infra and DevOps tools in golang
 
 ```
 make
@@ -9,4 +11,4 @@ make
 
 https://github.com/spf13/cobra
 
-https://github.com/aws/aws-sdk-go
+https://github.com/aws/aws-sdk-go-v2
