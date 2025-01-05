@@ -14,7 +14,7 @@ import (
 
 var kube_eventsCmd = &cobra.Command{
 	Use:   "kube-events",
-	Short: "kube-events -p pod",
+	Short: "kube-events pod",
 	Long:  "kube-events example custom action with k8s based on event",
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
@@ -34,7 +34,7 @@ func kube_events(args []string) {
 	fmt.Println("running kube_events", args)
 	client, err := createClient("/Users/chris/.kube/config")
 	if err != nil {
-		fmt.Println("ERROR: kube createClient")
+		fmt.Println("ERROR: kube createClient verify access to k8s cluster")
 		return
 	}
 	events, _ := client.CoreV1().Events("default").List(context.TODO(), metav1.ListOptions{FieldSelector: "involvedObject.name=" + args[0], TypeMeta: metav1.TypeMeta{Kind: "Pod"}})
